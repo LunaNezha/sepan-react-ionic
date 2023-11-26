@@ -1,0 +1,1 @@
+System.register(["./index-legacy-df0c1cbd.js"],(function(e,n){"use strict";var t;return{setters:[e=>{t=e.r}],execute:function(){e("W",(()=>{const[e,n]=t.useState([0,0]);return t.useEffect((()=>{function e(){n([window.innerWidth,window.innerHeight])}return window.addEventListener("resize",e),e(),()=>window.removeEventListener("resize",e)}),[]),e}))}}}));

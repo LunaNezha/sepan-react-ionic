@@ -1,0 +1,91 @@
+{
+  "app_title": "سپان",
+  "app_complete_title": "سامانه پذیرش الکترونیکی نسخه",
+  "titles": {
+    "dashboard": "پیشخوان",
+    "account_status": "حساب کاربری",
+    "prescription_tracking": "پیگیری نسخه",
+    "search": "جستجو",
+    "not_found": "صفحه یافت نشد",
+    "login": "ورود"
+  },
+  "inputs": {
+    "global_search": "عنوان مورد نظر خود را جستجو کنید...",
+    "id_tracking": "شماره پیگیری مورد نظر خود را وارد کنید...",
+    "national_code": "کد ملی خود را وارد کنید...",
+    "password": "رمز عبور خود را وارد کنید...",
+    "newPassword": "رمز عبور جدید خود را وارد کنید...",
+    "firstname": "نام خود را وارد کنید...",
+    "lastname": "نام خانوادگی خود را وارد کنید..."
+  },
+  "success_res": {},
+  "error_res": {
+    "not_send_verifycode": "کد تأیید را دریافت نکرده ام!"
+  },
+  "validations": {
+    "email_format": "آدرس ایمیل نامعتبر است.",
+    "national_code_format": "قالب کد ملی نامعتبر است.",
+    "requireds": {
+      "id_tracking": "وارد کردن شماره پیگیری الزامی می باشد.",
+      "national_code": "وارد کردن کد ملی الزامی می باشد.",
+      "email": "وارد کردن ایمیل الزامی می باشد.",
+      "password": "وارد کردن رمز عبور الزامی می باشد.",
+      "newPassword": "وارد کردن رمز عبور جدید الزامی می باشد.",
+      "firstname": "وارد کردن نام الزامی می باشد.",
+      "lastname": "وارد کردن نام خانوادگی الزامی می باشد."
+    },
+    "minimum": {
+      "national_code": "کد ملی باید 5 کاراکتر یا بیشتر باشد.",
+      "email": "ایمیل باید 5 کاراکتر یا بیشتر باشد."
+    },
+    "maximum": {
+      "national_code": "کد ملی باید 30 کاراکتر یا کمتر باشد."
+    }
+  },
+  "buttons": {
+    "search": "جستجو",
+    "back_home": "بازگشت به خانه",
+    "system_guide": "راهنمای سامانه",
+    "continue": "ادامه",
+    "dismiss": "بستن",
+    "back": "بازگشت",
+    "activation": "فعالسازی",
+    "send_again": "ارسال مجدد",
+    "submit": "تایید",
+    "change_phone_number": "تغییر شماره تلفن"
+  },
+  "messages": {
+    "delivered_prescription": "نسخه تحویل شده",
+    "rejected_prescription": "نسخه رد شده",
+    "canceled_prescription": "نسخه لغو شده",
+    "login_welcome": "به سامانه پذیرش الکترونیکی نسخه خوش آمدید"
+  },
+  "choose_lang": {
+    "header": "انتخاب زبان"
+  },
+  "tabs": {
+    "home": "خانه",
+    "support": "پشتیبانی",
+    "request": "درخواست",
+    "profile": "پروفایل"
+  },
+  "menus": {
+    "dashboard": "پیشخوان",
+    "prescription_tracking": "پیگیری نسخه",
+    "notifications": "اطلاعیه ها",
+    "rare_drugs": "داوهای کمیاب",
+    "settings": "تنظیمات",
+    "patients": "بیماران",
+    "prescription_acceptance_list": "لیست پذیرش نسخه",
+    "temporary_prescriptions": "نسخه های موقت",
+    "prescription_delivery": "تحویل نسخه",
+    "prescription_archive": "آرشیو نسخ",
+    "sms": "پیامک ها",
+    "news": "اخبارها و رویدادها",
+    "guide": "راهنما"
+  },
+  "globals": {
+    "time_remaining": "زمان باقیمانده",
+    "seconds": "ثانیه"
+  }
+}

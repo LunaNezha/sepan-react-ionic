@@ -1,0 +1,91 @@
+{
+  "app_title": "Sepan",
+  "app_complete_title": "Electronic Prescription Admission System",
+  "titles": {
+    "dashboard": "Dashboard",
+    "account_status": "Account Status",
+    "prescription_tracking": "Prescription Tracking",
+    "search": "Search",
+    "not_found": "Not Found",
+    "login": "Login"
+  },
+  "inputs": {
+    "global_search": "Enter title that you want search...",
+    "id_tracking": "Enter your id tracking...",
+    "national_code": "Enter your national code...",
+    "password": "Enter your password...",
+    "newPassword": "Enter your new password...",
+    "firstname": "Enter your firstname...",
+    "lastname": "Enter your lastname..."
+  },
+  "success_res": {},
+  "error_res": {
+    "not_send_verifycode": "I have not received the verification code!"
+  },
+  "validations": {
+    "email_format": "Invalid email address.",
+    "national_code_format": "Invalid national code format.",
+    "requireds": {
+      "id_tracking": "Id tracking is required!",
+      "national_code": "National code is required!",
+      "email": "Email is required!",
+      "password": "Password is required!",
+      "newPassword": "New password is required!",
+      "firstname": "Firstname is required!",
+      "lastname": "Lastname is required!"
+    },
+    "minimum": {
+      "national_code": "National code must be 5 or more characters long.",
+      "email": "Email must be 5 or more characters long."
+    },
+    "maximum": {
+      "national_code": "National code must be 30 or fewer characters long."
+    }
+  },
+  "buttons": {
+    "search": "Search",
+    "back_home": "Back to Home",
+    "system_guide": "System Guide",
+    "continue": "Continue",
+    "dismiss": "Dismiss",
+    "back": "Back",
+    "activation": "Activation",
+    "send_again": "Send Again",
+    "submit": "Submit",
+    "change_phone_number": "Change Phone Number"
+  },
+  "messages": {
+    "delivered_prescription": "Delivered prescription",
+    "rejected_prescription": "Rejected prescription",
+    "canceled_prescription": "Canceled prescription",
+    "login_welcome": "Welcome to the electronic prescription acceptance system"
+  },
+  "choose_lang": {
+    "header": "Choose language"
+  },
+  "tabs": {
+    "home": "Home",
+    "support": "Support",
+    "request": "Request",
+    "profile": "Profile"
+  },
+  "menus": {
+    "dashboard": "Dashboard",
+    "prescription_tracking": "Prescription Tracking",
+    "notifications": "Notifications",
+    "rare_drugs": "Rare Drugs",
+    "settings": "Sepan",
+    "patients": "Patients",
+    "prescription_acceptance_list": "Prescription List",
+    "temporary_prescriptions": "Temporary Prescriptions",
+    "prescription_delivery": "Prescription Delivery",
+    "prescription_archive": "Prescription Archive",
+    "sms": "SMS",
+    "news": "News",
+    "guide": "Guide"
+  },
+  "globals": {
+    "time_remaining": "Time Remaining",
+    "seconds": "Seconds"
+  }
+}

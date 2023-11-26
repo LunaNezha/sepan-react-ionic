@@ -1,0 +1,1 @@
+System.register(["./index-legacy-df0c1cbd.js","./App-legacy-72c02e9e.js"],(function(e,s){"use strict";var t,c,r;return{setters:[e=>{t=e.j},e=>{c=e.c,r=e.I}],execute:function(){e("default",(()=>t.jsx(c,{fullscreen:!0,children:t.jsx(r,{children:"پیگیری نسخه"})})))}}}));
