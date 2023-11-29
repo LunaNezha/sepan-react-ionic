@@ -1,8 +1,12 @@
+import {
+  NewPasswordValidation,
+  PasswordValidation,
+  UsernameValidation,
+} from "@constants/form-schemas.const";
 import { FieldErrors, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import Input from "@components/Inputs";
 import { z } from "zod";
-import { nationalCodeRegex } from "@utils/regexPatterns";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@components/Buttons";
 import { IonSpinner, IonText } from "@ionic/react";
@@ -10,20 +14,14 @@ import { useHistory } from "react-router";
 import { PathNames } from "@constants/pathnames.const";
 
 const ChangePhoneNumber = () => {
+  type FormValues = z.infer<typeof FormSchema>;
+  
   const { t } = useTranslation("translations");
   const history = useHistory();
-  type FormValues = z.infer<typeof FormSchema>;
   const FormSchema = z.object({
-    username: z
-      .string()
-      .min(1, t("validations.requireds.national_code"))
-      .min(5, t("validations.minimum.national_code"))
-      .max(30, t("validations.maximum.national_code"))
-      .regex(nationalCodeRegex, {
-        message: t("validations.national_code_format"),
-      }),
-    password: z.string().min(1, t("validations.requireds.password")),
-    newPassword: z.string().min(1, t("validations.requireds.newPassword")),
+    username: UsernameValidation(),
+    password: PasswordValidation(),
+    new_password: NewPasswordValidation(),
   });
   const { register, handleSubmit, formState } = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
@@ -69,13 +67,13 @@ const ChangePhoneNumber = () => {
 
         {/* new password input */}
         <Input
-          {...register("newPassword")}
+          {...register("new_password")}
           type="password"
           icon="fi fi-rr-key"
-          name="newPassword"
+          name="new_password"
           BorderRadius={"full"}
-          placeholder={t("inputs.newPassword")}
-          errors={errors.newPassword?.message}
+          placeholder={t("inputs.new_password")}
+          errors={errors.new_password?.message}
         />
       </div>
 

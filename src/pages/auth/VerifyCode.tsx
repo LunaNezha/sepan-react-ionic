@@ -1,5 +1,6 @@
 import { Button } from "@components/Buttons";
 import OTPInput from "@components/OTP";
+import { VerifyCodeValidation } from "@constants/form-schemas.const";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { IonSpinner, IonText } from "@ionic/react";
 import { FieldErrors, SubmitHandler, useForm } from "react-hook-form";
@@ -7,16 +8,11 @@ import { useTranslation } from "react-i18next";
 import { z } from "zod";
 
 const VerifyCode = () => {
-  type FormValues = z.infer<typeof VerifyCodeSchema>;
+  type FormValues = z.infer<typeof FormSchema>;
   const { t } = useTranslation("translations");
-  const VerifyCodeSchema = z.object({
-    verifyCode: z.number(),
-    // .min(1, t("validations.requireds.national_code"))
-    // .min(5, t("validations.minimum.national_code"))
-    // .max(30, t("validations.maximum.national_code")),
-  });
+  const FormSchema = z.object({ verifyCode: VerifyCodeValidation() });
   const { register, handleSubmit, formState } = useForm<FormValues>({
-    resolver: zodResolver(VerifyCodeSchema),
+    resolver: zodResolver(FormSchema),
   });
   const { errors, isSubmitting, isLoading } = formState;
 
@@ -46,7 +42,7 @@ const VerifyCode = () => {
         </div>
 
         {/* verification code manage */}
-        <div className="flex flex-wrap items-center justify-between gap-4 text-white-950 dark:text-white-200">
+        <div className="flex flex-wrap items-center justify-between gap-4 font-iranyekan-regular text-white-950 dark:text-white-200">
           {/* time remaining */}
           <small className="text-xs opacity-80 dark:opacity-60">
             {`${t("globals.time_remaining")} 84 ${t("globals.seconds")}`}

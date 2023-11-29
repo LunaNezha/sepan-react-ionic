@@ -74,6 +74,8 @@ export const TextAlignsVariants = cva([], {
   variants: {
     TextAligns: {
       center: "text-center",
+      left: "text-left",
+      right: "text-right",
       auto: "ltr:text-left rtl:text-right",
     },
   },

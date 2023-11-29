@@ -16,7 +16,7 @@ const LegendContent = lazy(() => import("./Chart/LegendContent"));
 const TooltipContent = lazy(() => import("./Chart/TooltipContent"));
 
 const PrescriptionStatistics = () => {
-  const { data } = GetPrescriptions();
+  const { prescription } = GetPrescriptions();
   const [width] = WindowSize();
 
   return (
@@ -36,7 +36,7 @@ const PrescriptionStatistics = () => {
 
       {/* chart details */}
       <ResponsiveContainer width="100%" height={400} className="max-w-full">
-        <LineChart data={data as any} className="w-full max-w-full">
+        <LineChart data={prescription as any} className="w-full max-w-full">
           {/* background grid */}
           <CartesianGrid strokeDasharray="2" opacity={0.2} />
 

@@ -9,7 +9,7 @@ interface IProps {
   changeDirection: (dir: Directions) => void;
 }
 
-const MobileView: React.FC<IProps> = ({ changeDirection }) => {
+const LanguageSwitcherMobileView: React.FC<IProps> = ({ changeDirection }) => {
   const { i18n, t } = useTranslation();
   const [isAlertOpen, setAlertOpen] = useState(false);
 
@@ -57,4 +57,4 @@ const MobileView: React.FC<IProps> = ({ changeDirection }) => {
   );
 };
 
-export default MobileView;
+export default LanguageSwitcherMobileView;

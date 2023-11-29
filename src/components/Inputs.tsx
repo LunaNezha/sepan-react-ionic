@@ -45,7 +45,6 @@ const Input = (
         PaddingVariants({ Padding }),
         "shadows group flex flex-nowrap items-center gap-4 border-2 border-transparent bg-white-50 text-white-950 dark:bg-big-stone-950 dark:text-white-200",
         errors && "border-rose-300",
-        errors && "bg-rose-400/10",
       )}
     >
       <input

@@ -36,7 +36,7 @@ const AuthRoutes: React.FC = () => {
         path={PathNames.Auth.LoginFirstStep}
         render={() => (
           <AuthLayout
-            className="w-11/12"
+            className="h-full w-10/12"
             imageClassName="flex-1"
             formClassName="flex-1"
             lightImage={LightLoginImage}
@@ -54,7 +54,7 @@ const AuthRoutes: React.FC = () => {
         path={PathNames.Auth.LoginSecondStep}
         render={() => (
           <AuthLayout
-            className="w-11/12"
+            className="h-full w-10/12"
             imageClassName="flex-1"
             formClassName="flex-1"
             lightImage={LightLoginImage}
@@ -89,7 +89,7 @@ const AuthRoutes: React.FC = () => {
         path={PathNames.Auth.ChangePhoneNumber}
         render={() => (
           <AuthLayout
-            className="w-11/12"
+            className="h-full w-10/12"
             lightImage={LightChangeNumberImage}
             darkImage={DarkChangeNumberImage}
             imageClassName="flex-1"
@@ -109,7 +109,8 @@ const AuthRoutes: React.FC = () => {
           <AuthLayout
             lightImage={LightRegisterImage}
             darkImage={DarkRegisterImage}
-            formClassName="flex-100"
+            formClassName="flex-[60%]"
+            imageClassName="flex-[40%]"
             sidebarTitle={t("messages.login_welcome")}
           >
             <Register />

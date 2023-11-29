@@ -8,32 +8,28 @@ import { useEffect } from "react";
 import Input from "@components/Inputs";
 import { Button } from "@components/Buttons";
 import { IonSpinner, IonText } from "@ionic/react";
-import i18next from "i18next";
 import { PathNames } from "@constants/pathnames.const";
 import { nationalCodeRegex } from "@utils/regexPatterns";
+import {
+  PasswordValidation,
+  UsernameValidation,
+} from "@constants/form-schemas.const";
 
 const Password = () => {
-  type FormValues = z.infer<typeof LoginSchema>;
+  type FormValues = z.infer<typeof FormSchema>;
   const history = useHistory();
   const { t, i18n } = useTranslation("translations");
   const { search } = useLocation();
   const params = new URLSearchParams(search);
   const username = params.get("username");
-  const LoginSchema = z.object({
-    username: z
-      .string()
-      .min(1, t("validations.requireds.national_code"))
-      .min(5, t("validations.minimum.national_code"))
-      .max(30, t("validations.maximum.national_code"))
-      .regex(nationalCodeRegex, {
-        message: t("validations.national_code_format"),
-      }),
-    password: z.string().min(1, t("validations.requireds.password")),
+  const FormSchema = z.object({
+    username: UsernameValidation(),
+    password: PasswordValidation(),
   });
 
   const { register, handleSubmit, formState, reset, setValue } =
     useForm<FormValues>({
-      resolver: zodResolver(LoginSchema),
+      resolver: zodResolver(FormSchema),
     });
   const { errors, isSubmitting, isLoading, isSubmitSuccessful } = formState;
 

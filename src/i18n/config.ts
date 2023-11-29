@@ -17,6 +17,14 @@ i18next
     interpolation: {
       escapeValue: false,
     },
+    // resources: {
+    //   en: {
+    //     translation: "./src/i18n/en/translations.json",
+    //   },
+    //   fa: {
+    //     translation: "./src/i18n/fa/translations.json",
+    //   },
+    // },
   });
 
 export default i18next;

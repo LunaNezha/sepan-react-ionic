@@ -83,6 +83,15 @@ const buttonVariants = cva(
           "hover:bg-blue-600/25",
           "hover:dark:bg-blue-600/25",
         ],
+        "text-red": [
+          "shadow-none",
+          "bg-transparent",
+          "text-rose-400",
+          "hover:text-rose-400",
+          "hover:dark:text-rose-400",
+          "hover:bg-rose-400/25",
+          "hover:dark:bg-rose-400/25",
+        ],
       },
       size: {
         sm: ["px-3", "py-2", "text-sm", "font-iranyekan-bold"],

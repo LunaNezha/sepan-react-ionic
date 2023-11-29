@@ -11,8 +11,8 @@ interface Props {
   changeDirection: (dir: Directions) => void;
 }
 
-export const WebView: React.FC<Props> = ({ changeDirection }) => {
-  const { i18n, t } = useTranslation();
+const LanguageSwitcherWebView: React.FC<Props> = ({ changeDirection }) => {
+  const { i18n } = useTranslation();
   const popover = useRef<HTMLIonPopoverElement>(null);
   const [popoverOpen, setPopoverOpen] = useState(false);
 
@@ -84,3 +84,5 @@ export const WebView: React.FC<Props> = ({ changeDirection }) => {
     </>
   );
 };
+
+export default LanguageSwitcherWebView;

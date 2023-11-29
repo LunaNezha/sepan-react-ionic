@@ -187,6 +187,9 @@ export default {
       addVariant("partContainer", "&::part(container)");
       addVariant("partScroll", "&::part(scroll)");
       addVariant("partSeparator", "&::part(separator)");
+      addVariant("partIcon", "&::part(icon)");
+      addVariant("partPlaceholder", "&::part(placeholder)");
+      addVariant("partMark", "&::part(mark)");
       addVariant("partCollapsedIndicator", "&::part(collapsed-indicator)");
     }),
     plugin(function ({ addUtilities }) {

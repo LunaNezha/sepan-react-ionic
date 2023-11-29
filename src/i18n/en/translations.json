@@ -7,6 +7,8 @@
     "prescription_tracking": "Prescription Tracking",
     "search": "Search",
     "not_found": "Not Found",
+    "terms_and_conditions": "Terms and Conditions",
+    "privacy": "Rules and Privacy",
     "login": "Login"
   },
   "inputs": {
@@ -14,9 +16,14 @@
     "id_tracking": "Enter your id tracking...",
     "national_code": "Enter your national code...",
     "password": "Enter your password...",
-    "newPassword": "Enter your new password...",
+    "new_password": "Enter your new password...",
+    "confirm_password": "Enter your confirm password...",
     "firstname": "Enter your firstname...",
-    "lastname": "Enter your lastname..."
+    "lastname": "Enter your lastname...",
+    "phone_number": "Enter your phone number...",
+    "gender": "Enter your gender...",
+    "disease_type": "Enter your disease type...",
+    "birthdate": "Enter your birth date..."
   },
   "success_res": {},
   "error_res": {
@@ -30,9 +37,15 @@
       "national_code": "National code is required!",
       "email": "Email is required!",
       "password": "Password is required!",
-      "newPassword": "New password is required!",
+      "new_password": "New password is required!",
+      "confirm_password": "Confirm password is required!",
       "firstname": "Firstname is required!",
-      "lastname": "Lastname is required!"
+      "lastname": "Lastname is required!",
+      "phone_number": "Phone number is required!",
+      "gender": "Gender is required!",
+      "disease_type": "Disease type is required!",
+      "terms_and_conditions": "It is required to accept the terms and conditions.",
+      "birthdate": "Birth date is required!"
     },
     "minimum": {
       "national_code": "National code must be 5 or more characters long.",
@@ -43,6 +56,7 @@
     }
   },
   "buttons": {
+    "register": "Register",
     "search": "Search",
     "back_home": "Back to Home",
     "system_guide": "System Guide",
@@ -53,6 +67,9 @@
     "send_again": "Send Again",
     "submit": "Submit",
     "change_phone_number": "Change Phone Number"
+  },
+  "checkboxes": {
+    "register_copyright": "By logging in or registering on the website of the Electronic Admission System (SEPAN), you <TermsConditionLink>terms_and_conditionLink</TermsConditionLink> of using the services, You accept the SEPAN site and its <PrivacyLink>Privacy Policy</PrivacyLink>."
   },
   "messages": {
     "delivered_prescription": "Delivered prescription",
@@ -86,6 +103,15 @@
   },
   "globals": {
     "time_remaining": "Time Remaining",
-    "seconds": "Seconds"
+    "not_selected": "Not Selected",
+    "unknown": "Unknown",
+    "woman": "Woman",
+    "man": "Man",
+    "seconds": "Seconds",
+    "ms": "MS",
+    "transplant": "Transplant",
+    "thalassemia": "Thalassemia",
+    "chemotherapy": "Chemotherapy",
+    "none": "None"
   }
 }

@@ -15,7 +15,7 @@ const Tooltip = ({ message, position, children, ...props }: IProps) => {
       <div>{children}</div>
       <span
         className={cn(
-          "absolute hidden whitespace-nowrap drop-shadow-lg rounded-lg bg-white-50 p-2 text-xs text-white-950 transition group-hover:inline-block dark:bg-ebony-950 dark:text-white-200",
+          "absolute hidden font-iranyekan-regular whitespace-nowrap rounded-lg bg-white-50 p-2 text-xs text-white-950 drop-shadow-lg transition group-hover:inline-block dark:bg-ebony-950 dark:text-white-200",
           position === Positions.Top
             ? "bottom-[calc(100%+5px)] left-1/2 -translate-x-1/2"
             : "",
@@ -34,7 +34,7 @@ const Tooltip = ({ message, position, children, ...props }: IProps) => {
       </span>
       <span
         className={cn(
-          "absolute hidden border-[6px] transition drop-shadow-lg group-hover:inline-block",
+          "absolute hidden border-[6px] drop-shadow-lg transition group-hover:inline-block",
           position === Positions.Top
             ? "bottom-full left-1/2 -translate-x-1/2 border-b-0 border-l-transparent border-r-transparent border-t-white-50 dark:border-t-ebony-950"
             : "",

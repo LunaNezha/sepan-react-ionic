@@ -10,6 +10,7 @@ const UsersStatistic = () => {
     { image: Woman1 },
     { image: Woman2 },
   ];
+  
   return (
     <div className="shadows flex flex-1 flex-col justify-between gap-10 rounded-md bg-white-50 px-6 py-7 font-iranyekan-regular text-white-950 dark:bg-big-stone-950 dark:text-white-200">
       {/* top detais */}

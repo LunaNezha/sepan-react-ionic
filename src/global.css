@@ -226,6 +226,24 @@
       }
     }
   }
+
+  ion-datetime {
+    @apply rounded-xl bg-white-50 drop-shadow-xl dark:bg-ebony-950;
+  }
+
+  ion-item {
+    &::part(month-year-button) {
+      @apply text-white-950 dark:text-white-200;
+    }
+  }
+
+  button::part(calendar-day) {
+    @apply text-white-950 dark:text-white-200;
+  }
+
+  ion-checkbox {
+    @apply partMark:stroke-blue-600 partMark:stroke-2 partContainer:shadows partContainer:border-2 partContainer:border-blue-600 partContainer:bg-white-50 partContainer:dark:bg-big-stone-950;
+  }
 }
 
 @layer components {
@@ -345,5 +363,52 @@ ion-alert {
         @apply text-rose-400 transition-all;
       }
     }
+  }
+}
+
+.css-817hxt {
+  @apply !border-0 bg-white-50 drop-shadow-lg dark:bg-ebony-950;
+
+  .css-joapi7 {
+    @apply border-b-0 bg-white-50 dark:bg-ebony-950;
+
+    button {
+      @apply text-blue-400;
+
+      &:hover,
+      &:focus {
+        @apply bg-white-100 dark:bg-big-stone-950;
+      }
+    }
+  }
+
+  .css-sp254y {
+    @apply m-2;
+
+    .css-1tniij6 {
+      @apply text-white-950/60 dark:text-white-200/40;
+    }
+  }
+
+  .css-7qlbje,
+  .css-1ngbwef,
+  .css-133ufif {
+    button {
+      @apply !text-white-950 dark:!text-white-200;
+
+      &:hover {
+        @apply border-white-950/30 dark:border-white-200/30;
+      }
+
+      &[data-selected="true"] {
+        @apply bg-blue-600 !text-white-50;
+      }
+    }
+  }
+}
+
+.ion-datetime-button-overlay {
+  .ion-page {
+    @apply rounded-xl bg-white-50 dark:bg-ebony-950;
   }
 }

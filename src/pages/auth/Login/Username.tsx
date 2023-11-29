@@ -1,8 +1,7 @@
 import { Button } from "@components/Buttons";
 import Input from "@components/Inputs";
 import { IonSpinner, IonText } from "@ionic/react";
-import i18next from "i18next";
-import { ChangeEvent, useEffect } from "react";
+import { useEffect } from "react";
 import { FieldErrors, SubmitHandler, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,24 +9,15 @@ import { z } from "zod";
 import { enqueueSnackbar } from "notistack";
 import { useHistory } from "react-router-dom";
 import { PathNames } from "@constants/pathnames.const";
-import { nationalCodeRegex } from "@utils/regexPatterns";
+import { UsernameValidation } from "@constants/form-schemas.const";
 
 const Username = () => {
-  type FormValues = z.infer<typeof LoginSchema>;
+  type FormValues = z.infer<typeof FormSchema>;
   const { t, i18n } = useTranslation("translations");
   const history = useHistory();
-  const LoginSchema = z.object({
-    username: z
-      .string()
-      .min(1, t("validations.requireds.national_code"))
-      .min(5, t("validations.minimum.national_code"))
-      .max(30, t("validations.maximum.national_code"))
-      .regex(nationalCodeRegex, {
-        message: t("validations.national_code_format"),
-      }),
-  });
+  const FormSchema = z.object({ username: UsernameValidation() });
   const { register, handleSubmit, formState, reset } = useForm<FormValues>({
-    resolver: zodResolver(LoginSchema),
+    resolver: zodResolver(FormSchema),
   });
   const { errors, isSubmitting, isLoading, isSubmitSuccessful } = formState;
 
@@ -65,7 +55,7 @@ const Username = () => {
         placeholder={t("inputs.national_code")}
         errors={errors.username?.message}
       />
-      
+
       <Button type="submit" variant={"filled-green"} size={"md"} round={"full"}>
         <IonText>{t("buttons.continue")}</IonText>
         {isSubmitting && isLoading ? (

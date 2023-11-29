@@ -3,7 +3,7 @@ import { DARK, LIGHT, THEME } from "@constants/theme.const";
 import LightLogo from "@assets/images/logo.png";
 import DarkLogo from "@assets/images/logo-dark.png";
 import React from "react";
-import { IonContent, IonHeader, IonText, IonToolbar } from "@ionic/react";
+import { IonContent, IonHeader, IonText } from "@ionic/react";
 import { useTranslation } from "react-i18next";
 import ThemeSwitcher from "@components/ThemeSwitcher";
 import LanguageSwitcher from "@components/LanguageSwitcher/Index";
@@ -84,7 +84,7 @@ const AuthLayout = (props: IAuthDesignProps) => {
           <div
             className={cn(
               className,
-              "mx-auto flex flex-col justify-center gap-8 p-2 sm:p-8 sm:pt-4 md:px-20 md:pb-16 md:pt-4",
+              "m-auto flex flex-col justify-center gap-8 p-2 sm:p-8 sm:pt-4 md:px-20 md:pb-16 md:pt-4",
             )}
           >
             <header className="flex flex-col items-center justify-center gap-4 text-center">

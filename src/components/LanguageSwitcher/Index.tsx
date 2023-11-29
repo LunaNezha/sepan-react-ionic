@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import MobileView from "./MobileView";
-import { WebView } from "./WebView";
+import LanguageSwitcherMobileView from "./MobileView";
+import LanguageSwitcherWebView from "./WebView";
 import { Directions } from "@enums/directions.enum";
 import { useTranslation } from "react-i18next";
 
 const views = {
-  mobile: MobileView,
-  web: WebView,
+  mobile: LanguageSwitcherMobileView,
+  web: LanguageSwitcherWebView,
 };
 
 interface Props {
