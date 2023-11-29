@@ -211,6 +211,34 @@
     &::part(arrow)::after {
       @apply bg-white-50 dark:bg-big-stone-950;
     }
+
+    &::part(content) {
+      @apply rounded-xl border-0 bg-transparent;
+    }
+
+    ion-select-popover {
+      @apply bg-white-50 p-3 drop-shadow-xl dark:bg-big-stone-950;
+
+      ion-list {
+        @apply !bg-transparent;
+
+        ion-item {
+          --border-color: transparent;
+
+          &::part(native) {
+            @apply rounded-lg border-0 bg-white-50 dark:bg-big-stone-950;
+          }
+
+          ion-radio {
+            @apply text-sm partMark:border-emerald-400;
+          }
+
+          ion-checkbox {
+            @apply text-sm partContainer:h-4 partContainer:w-4 partContainer:border-[1px];
+          }
+        }
+      }
+    }
   }
 
   ion-breadcrumbs {
@@ -242,7 +270,7 @@
   }
 
   ion-checkbox {
-    @apply partMark:stroke-blue-600 partMark:stroke-2 partContainer:shadows partContainer:border-2 partContainer:border-blue-600 partContainer:bg-white-50 partContainer:dark:bg-big-stone-950;
+    @apply partContainer:shadows partContainer:border-2 partContainer:border-blue-600 partContainer:bg-white-50 partMark:stroke-blue-600 partMark:stroke-2 partContainer:dark:bg-big-stone-950;
   }
 }
 
