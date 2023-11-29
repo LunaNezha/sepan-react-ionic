@@ -181,6 +181,10 @@
     }
   }
 
+  ion-modal {
+    @apply partContent:bg-transparent;
+  }
+
   ion-item,
   ion-label {
     @apply m-0 font-iranyekan-regular text-white-950 dark:text-white-200;
@@ -256,7 +260,38 @@
   }
 
   ion-datetime {
-    @apply rounded-xl bg-white-50 drop-shadow-xl dark:bg-ebony-950;
+    @apply rounded-xl bg-white-100 dark:bg-big-stone-950;
+
+    --wheel-highlight-background: rgba(0, 0, 0, 5%);
+    --background-rgb: rgba(0, 0, 0, 5%);
+
+    &::part(month-year-button) {
+      --color-hover: #2d7dff;
+      --color-activated: #2d7dff;
+      --color-focused: #2d7dff;
+      @apply text-white-950 dark:text-white-200;
+    }
+
+    &::part(calendar-day) {
+      @apply text-sm text-white-950 dark:text-white-200;
+    }
+
+    &::part(calendar-day active) {
+      @apply bg-blue-500/20 font-bold !text-blue-500;
+    }
+
+    &::part(calendar-day today) {
+      @apply bg-emerald-400/20 font-bold !text-emerald-500;
+    }
+
+    &::part(wheel-item) {
+      @apply text-sm text-white-950 dark:text-white-200;
+    }
+
+    &::part(wheel-item active) {
+      @apply !text-emerald-400 font-bold;
+    }
+    
   }
 
   ion-item {
@@ -339,7 +374,7 @@ ion-alert {
 
     .alert-head {
       h2 {
-        @apply font-iranyekan-bold text-lg text-white-950 dark:text-white-200;
+        @apply font-iranyekan-bold text-sm text-white-950 dark:text-white-200;
       }
     }
 
@@ -365,6 +400,46 @@ ion-alert {
           .alert-radio-icon .alert-radio-inner {
             @apply border-emerald-400;
           }
+        }
+      }
+    }
+
+    .alert-checkbox-group {
+      button {
+        &[aria-checked="true"] {
+          .alert-button-inner {
+            .alert-checkbox-icon {
+              @apply border-emerald-400 !bg-emerald-400;
+            }
+          }
+        }
+
+        .alert-button-inner {
+          .alert-checkbox-icon {
+            @apply h-5 w-5 border-[1px] border-blue-500 bg-white-50 dark:bg-big-stone-950;
+
+            .alert-checkbox-inner {
+              @apply left-[6px] right-[6px] top-[2px] h-3 w-[5px];
+            }
+          }
+
+          .alert-checkbox-label {
+            @apply font-iranyekan-regular text-sm text-white-950 dark:text-white-200;
+          }
+        }
+      }
+    }
+
+    .alert-button-group {
+      button {
+        @apply h-auto py-3 text-sm;
+
+        &:not(.alert-button-role-cancel) {
+          @apply font-iranyekan-bold text-emerald-400;
+        }
+
+        &.alert-button-role-cancel {
+          @apply font-iranyekan-regular text-rose-400;
         }
       }
     }
@@ -436,6 +511,10 @@ ion-alert {
 }
 
 .ion-datetime-button-overlay {
+  &::part(content) {
+    @apply bg-white-100 px-5 py-7 drop-shadow-xl dark:bg-big-stone-950;
+  }
+
   .ion-page {
     @apply rounded-xl bg-white-50 dark:bg-ebony-950;
   }

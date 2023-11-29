@@ -43,18 +43,18 @@ const AuthLayout = (props: IAuthDesignProps) => {
       <div
         className={cn(
           imageClassName,
-          "relative flex h-screen flex-col items-center justify-center gap-7 overflow-hidden bg-blue-600 text-center dark:bg-big-stone-950 md:p-12",
+          "md:p-12 relative h-screen flex-col items-center justify-center gap-7 overflow-hidden bg-blue-600 text-center dark:bg-big-stone-950",
         )}
       >
         <img
-          className="w-auto object-contain drop-shadow-2xl"
+          className="md:w-80 lg:w-auto object-contain drop-shadow-2xl"
           src={
             secureLocalStorage.getItem(THEME) == DARK ? darkImage : lightImage
           }
           alt="authentication sidebar image"
         />
 
-        <h2 className="font-iranyekan-extrabold text-2xl leading-10 text-white-50 dark:text-white-200 md:w-4/6">
+        <h2 className="font-iranyekan-extrabold md:text-lg lg:text-xl xl:text-2xl leading-10 text-white-50 dark:text-white-200 md:w-4/6">
           {sidebarTitle}
         </h2>
 
@@ -65,7 +65,7 @@ const AuthLayout = (props: IAuthDesignProps) => {
       {/* form */}
       <div className={cn(formClassName, "flex flex-col")}>
         <IonHeader>
-          <div className="flex items-center justify-between gap-4 bg-white-100 px-8 py-6 dark:bg-ebony-950">
+          <div className="flex items-center justify-between gap-4 bg-white-100 p-4 sm:px-8 sm:py-6 dark:bg-ebony-950">
             <Button variant={"filled-default"} round={"full"} size={"sm"}>
               <i className="fi fi-rr-book"></i>
               <IonText class="text-xs">{t("buttons.system_guide")}</IonText>
@@ -84,7 +84,7 @@ const AuthLayout = (props: IAuthDesignProps) => {
           <div
             className={cn(
               className,
-              "m-auto flex flex-col justify-center gap-8 p-2 sm:p-8 sm:pt-4 md:px-20 md:pb-16 md:pt-4",
+              "m-auto flex flex-col justify-center gap-8",
             )}
           >
             <header className="flex flex-col items-center justify-center gap-4 text-center">

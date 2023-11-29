@@ -95,7 +95,12 @@ const buttonVariants = cva(
       },
       size: {
         sm: ["px-3", "py-2", "text-sm", "font-iranyekan-bold"],
-        md: ["px-5", "py-3", "text-base ", "font-iranyekan-bold"],
+        md: [
+          "sm:px-5 px-3",
+          "sm:py-3 py-2",
+          "sm:text-base text-sm",
+          "font-iranyekan-bold",
+        ],
         lg: ["px-6", "py-4", "text-lg", " font-iranyekan-bold"],
       },
       round: {

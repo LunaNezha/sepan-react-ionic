@@ -12,6 +12,10 @@ interface Resources {
       "privacy": "قوانین و حریم خصوصی",
       "login": "ورود"
     },
+    "alert_titles": {
+      "disease_type": "انتخاب نوع بیماری",
+      "gender": "انتخاب نوع جنسیت"
+    },
     "inputs": {
       "global_search": "عنوان مورد نظر خود را جستجو کنید...",
       "id_tracking": "شماره پیگیری مورد نظر خود را وارد کنید...",
@@ -67,7 +71,8 @@ interface Resources {
       "activation": "فعالسازی",
       "send_again": "ارسال مجدد",
       "submit": "تایید",
-      "change_phone_number": "تغییر شماره تلفن"
+      "change_phone_number": "تغییر شماره تلفن",
+      "close": "بستن"
     },
     "checkboxes": {
       "register_copyright": "با ورود و یا ثبت نام در سایت سامانه پذیرش الکترونیک نسخه (سپان) ، شما <TermsConditionLink>شرایط و قوانین</TermsConditionLink> استفاده از سرویس های سایت سپان و <PrivacyLink>قوانین و حریم خصوصی</PrivacyLink> آن را می‌پذیرید."

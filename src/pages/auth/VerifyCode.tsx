@@ -32,7 +32,7 @@ const VerifyCode = () => {
     >
       <div className="flex flex-col gap-2">
         {/* OTP inputs */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3" style={{ direction: "ltr" }}>
           <OTPInput
             {...register("verifyCode")}
             numberOfdigits={6}
@@ -42,7 +42,7 @@ const VerifyCode = () => {
         </div>
 
         {/* verification code manage */}
-        <div className="flex flex-wrap items-center justify-between gap-4 font-iranyekan-regular text-white-950 dark:text-white-200">
+        <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 font-iranyekan-regular text-white-950 dark:text-white-200">
           {/* time remaining */}
           <small className="text-xs opacity-80 dark:opacity-60">
             {`${t("globals.time_remaining")} 84 ${t("globals.seconds")}`}

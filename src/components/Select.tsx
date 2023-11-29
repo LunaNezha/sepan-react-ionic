@@ -3,27 +3,34 @@ import { Positions } from "@enums/positions.enum";
 import { IonSelect } from "@ionic/react";
 import { cn } from "@utils/classnames";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
-export interface ISelectWebViewProps
+export interface ISelectProps
   extends React.HTMLAttributes<HTMLIonSelectOptionElement> {
   className?: string;
   errors?: any;
   icon?: string;
   multiple?: boolean;
+  platform: "web" | "mobile";
+  alertTitle?: string;
   children: React.ReactNode;
 }
 
-const SelectWebView = (
+const Select = (
   {
     className,
     errors,
     children,
     icon,
     multiple = false,
+    platform,
+    alertTitle,
     ...props
-  }: ISelectWebViewProps,
+  }: ISelectProps,
   ref: React.Ref<HTMLIonSelectElement>,
 ) => {
+  const { t } = useTranslation("translations");
+
   return (
     <div
       className={cn(
@@ -36,7 +43,14 @@ const SelectWebView = (
         className="flex-1 partText:font-iranyekan-regular partText:text-sm partText:text-white-950 partContainer:w-full partIcon:text-white-950 partPlaceholder:font-iranyekan-regular partPlaceholder:text-sm partPlaceholder:text-white-950 partText:dark:text-white-200 partIcon:dark:text-white-200 partPlaceholder:dark:text-white-200"
         ref={ref}
         multiple={multiple}
-        interface="popover"
+        interface={platform === "web" ? "popover" : "alert"}
+        okText={t("buttons.submit")}
+        cancelText={t("buttons.close")}
+        interfaceOptions={
+          platform === "mobile" && {
+            header: alertTitle,
+          }
+        }
         {...props}
       >
         {children}
@@ -62,6 +76,6 @@ const SelectWebView = (
   );
 };
 
-const forwardSelectWebView = React.forwardRef(SelectWebView);
+const forwardSelect = React.forwardRef(Select);
 
-export default forwardSelectWebView;
+export default forwardSelect;

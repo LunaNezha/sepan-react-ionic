@@ -24,9 +24,8 @@ import LocalizeDatePicker from "@components/DatePicker/Index";
 import { FA } from "@constants/langs.const";
 import { useMaskito } from "@maskito/react";
 import options from "@constants/input-masks.const";
-import Select from "@components/Select/Index";
+import Select from "@components/Select";
 import { isWebView } from "@constants/platforms.const";
-import { Genders } from "@constants/genders.const";
 import {
   IonCheckbox,
   IonSelectOption,
@@ -38,10 +37,12 @@ import { Button } from "@components/Buttons";
 import { PathNames } from "@constants/pathnames.const";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import { DiseaseTypes } from "@constants/disease-type.const";
+import DiseaseTypes from "@constants/disease-type.const";
+import Genders from "@constants/genders.const";
 
 const Register = () => {
   type FormValues = z.infer<typeof RegisterFormSchema>;
+
   const { t, i18n } = useTranslation("translations");
   const history = useHistory();
   const phoneNumberRef = useMaskito({ options });
@@ -57,6 +58,7 @@ const Register = () => {
     diseaseType: DiseaseTypeValidation(),
     privacyPolicy: PrivacyPolicyValidation(),
   });
+
   const { control, register, handleSubmit, formState } = useForm<FormValues>({
     resolver: zodResolver(RegisterFormSchema),
   });
@@ -77,7 +79,7 @@ const Register = () => {
       className="flex flex-col gap-8"
     >
       {/* inputs */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
         {/* first name */}
         <Input
           {...register("firstname")}
@@ -169,12 +171,13 @@ const Register = () => {
           name="gender"
           render={() => (
             <Select
-              platform={isWebView() ? { view: "web" } : { view: "mobile" }}
+              platform={isWebView() ? "web" : "mobile"}
               placeholder={t("inputs.gender")}
               icon="fi fi-rr-venus-mars"
+              alertTitle={t("alert_titles.gender")}
               errors={errors.gender?.message}
             >
-              {Genders.map((item, index) => (
+              {Genders().map((item, index) => (
                 <React.Fragment key={index}>
                   <IonSelectOption value={item.value}>
                     {item.name}
@@ -191,14 +194,15 @@ const Register = () => {
           name="diseaseType"
           render={() => (
             <Select
-              className="col-span-2 row-span-5"
-              platform={isWebView() ? { view: "web" } : { view: "mobile" }}
+              className="sm:col-span-2 sm:row-span-5 md:col-span-1 lg:col-span-2 lg:row-span-5"
+              platform={isWebView() ? "web" : "mobile"}
               placeholder={t("inputs.disease_type")}
               icon="fi fi-rr-medicine"
               multiple={true}
+              alertTitle={t("alert_titles.disease_type")}
               errors={errors.diseaseType?.message}
             >
-              {DiseaseTypes.map((item, index) => (
+              {DiseaseTypes().map((item, index) => (
                 <React.Fragment key={index}>
                   <IonSelectOption value={item.value}>
                     {item.name}

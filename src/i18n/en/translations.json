@@ -11,6 +11,10 @@
     "privacy": "Rules and Privacy",
     "login": "Login"
   },
+  "alert_titles": {
+    "disease_type": "Choose Disease Type",
+    "gender": "Choose Gender"
+  },
   "inputs": {
     "global_search": "Enter title that you want search...",
     "id_tracking": "Enter your id tracking...",
@@ -66,10 +70,11 @@
     "activation": "Activation",
     "send_again": "Send Again",
     "submit": "Submit",
-    "change_phone_number": "Change Phone Number"
+    "change_phone_number": "Change Phone Number",
+    "close": "Close"
   },
   "checkboxes": {
-    "register_copyright": "By logging in or registering on the website of the Electronic Admission System (SEPAN), you <TermsConditionLink>terms_and_conditionLink</TermsConditionLink> of using the services, You accept the SEPAN site and its <PrivacyLink>Privacy Policy</PrivacyLink>."
+    "register_copyright": "By logging in or registering on the website of the Electronic Admission System (SEPAN), you <TermsConditionLink>Terms and Conditions</TermsConditionLink> of using the services, You accept the SEPAN site and its <PrivacyLink>Privacy Policy</PrivacyLink>."
   },
   "messages": {
     "delivered_prescription": "Delivered prescription",
