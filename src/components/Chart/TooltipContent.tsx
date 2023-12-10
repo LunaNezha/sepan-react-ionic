@@ -1,15 +1,15 @@
 import React from "react";
 
-interface IProps {
+type Props = {
   active: boolean;
   label: string;
   payload: { name: string; value: string; color: string }[];
-}
+};
 
-const TooltipContent: React.FC<IProps> = ({ active, payload, label }) => {
+const TooltipContent: React.FC<Props> = ({ active, payload, label }) => {
   if (active && payload?.length) {
     return (
-      <div className="bg-white-50 flex flex-col gap-4 rounded-xl p-4 shadow-md dark:bg-ebony-950 dark:shadow-lg">
+      <div className="flex flex-col gap-4 rounded-xl bg-white-50 p-4 shadow-md dark:bg-ebony-950 dark:shadow-lg">
         <strong className="font-iranyekan-extrabold">{label}</strong>
 
         <div className="flex flex-col gap-2">

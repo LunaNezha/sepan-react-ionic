@@ -7,9 +7,9 @@ import UnitedStatesFlag from "@assets/images/united-states.png";
 import { useTranslation } from "react-i18next";
 import { Button } from "@components/Buttons";
 
-interface Props {
+type Props = {
   changeDirection: (dir: Directions) => void;
-}
+};
 
 const LanguageSwitcherWebView: React.FC<Props> = ({ changeDirection }) => {
   const { i18n } = useTranslation();

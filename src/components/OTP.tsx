@@ -1,17 +1,14 @@
 import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import Input from "./Inputs";
 
-interface IProps extends React.InputHTMLAttributes<HTMLInputElement> {
+type Props = React.InputHTMLAttributes<HTMLInputElement> & {
   numberOfdigits: number;
   errors?: any;
-}
+};
 
 let currentOTPIndex: number;
 
-const OTPInput: React.FC<IProps> = (
-  { numberOfdigits, errors },
-  ...rest
-) => {
+const OTPInput: React.FC<Props> = ({ numberOfdigits, errors }, ...rest) => {
   const [otp, setOtp] = useState<string[]>(new Array(numberOfdigits).fill(""));
   const [activeOtpIndex, setActiveOtpIndex] = useState<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);

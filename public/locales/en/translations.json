@@ -53,7 +53,8 @@
     },
     "minimum": {
       "national_code": "National code must be 5 or more characters long.",
-      "email": "Email must be 5 or more characters long."
+      "email": "Email must be 5 or more characters long.",
+      "password": "Password must be 6 or more characters long."
     },
     "maximum": {
       "national_code": "National code must be 30 or fewer characters long."

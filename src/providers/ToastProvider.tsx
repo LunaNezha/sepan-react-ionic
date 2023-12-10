@@ -2,11 +2,11 @@ import { SnackbarProvider, closeSnackbar } from "notistack";
 import { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 
-interface Iprops {
+type Props = {
   children: ReactNode;
-}
+};
 
-const ToastProvider = ({ children }: Iprops) => {
+const ToastProvider = ({ children }: Props) => {
   const { t } = useTranslation("translations");
 
   return (
@@ -25,9 +25,13 @@ const ToastProvider = ({ children }: Iprops) => {
         </button>
       )}
       iconVariant={{
-        success: <i className="fi fi-sr-check-circle text-lg text-emerald-400"></i>,
+        success: (
+          <i className="fi fi-sr-check-circle text-lg text-emerald-400"></i>
+        ),
         error: <i className="fi fi-sr-cross-circle text-lg text-rose-400"></i>,
-        warning: <i className="fi fi-sr-triangle-warning text-lg text-orange-400"></i>,
+        warning: (
+          <i className="fi fi-sr-triangle-warning text-lg text-orange-400"></i>
+        ),
         info: <i className="fi fi-sr-info text-lg text-blue-400"></i>,
       }}
     >

@@ -1,4 +1,4 @@
-export interface IPrescriptions {
+export type Prescriptions = {
   id?: number;
   patientId?: number;
   type: number;
@@ -20,9 +20,9 @@ export interface IPrescriptions {
   lastTransactionUser?: string;
   lastTransactionClosed: boolean;
   prescriptionRequestDate: string;
-}
+};
 
-export interface IAddPrescription {
+export type AddPrescription = {
   id?: number;
   type: number;
   insuranceType: number;
@@ -34,9 +34,9 @@ export interface IAddPrescription {
   prescriptionBackImage?: string;
   prescriptionCode: string;
   prescriptionDate?: number;
-}
+};
 
-export interface IPrescriptionDetails {
+export type PrescriptionDetails = {
   patientId: number;
   patientNationalCode: string;
   patientFirstname: string;
@@ -47,11 +47,11 @@ export interface IPrescriptionDetails {
   birthDate: string;
   userState: number;
   serialDocument: number;
-  prescriptionRequest: IPrescriptionRequest;
-  prescriptionTransactions: IPrescriptionTransaction[];
-}
+  prescriptionRequest: PrescriptionRequest;
+  prescriptionTransactions: PrescriptionTransaction[];
+};
 
-export interface IPrescriptionRequest {
+export type PrescriptionRequest = {
   id: number;
   deliverOn: string;
   description: string;
@@ -69,9 +69,9 @@ export interface IPrescriptionRequest {
   supplementShare: number;
   supplementType: number;
   type: number;
-}
+};
 
-export interface IPrescriptionTransaction {
+export type PrescriptionTransaction = {
   transactionId: number;
   startTransactionPersianDateTime: string;
   startTransactionTimeSpan: number;
@@ -82,4 +82,4 @@ export interface IPrescriptionTransaction {
   description: string;
   assignedUserId: number;
   assignedUsername: string;
-}
+};

@@ -9,11 +9,11 @@ const views = {
   web: LanguageSwitcherWebView,
 };
 
-interface Props {
+type Props = {
   platform: {
     view: "mobile" | "web";
   };
-}
+};
 
 const LanguageSwitcher: React.FC<Props> = ({ platform }) => {
   const { t } = useTranslation(["translations"]);

@@ -4,11 +4,11 @@ import { IonDatetime, IonDatetimeButton, IonModal } from "@ionic/react";
 import { cn } from "@utils/classnames";
 import React from "react";
 
-export interface IDefaultDatePickerProps {
+export type DefaultDatePickerProps = {
   errors?: any;
-}
+};
 
-const DefaultDatePicker: React.FC<IDefaultDatePickerProps> = ({ errors }) => {
+const DefaultDatePicker: React.FC<DefaultDatePickerProps> = ({ errors }) => {
   return (
     <>
       <div
@@ -34,7 +34,12 @@ const DefaultDatePicker: React.FC<IDefaultDatePickerProps> = ({ errors }) => {
       </div>
 
       <IonModal keepContentsMounted={true}>
-        <IonDatetime dir="ltr" id="datetime" color="#2d7dff" presentation="date"></IonDatetime>
+        <IonDatetime
+          dir="ltr"
+          id="datetime"
+          color="#2d7dff"
+          presentation="date"
+        ></IonDatetime>
       </IonModal>
     </>
   );

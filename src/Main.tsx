@@ -1,11 +1,11 @@
-import "@i18n/config";
+import "./i18n.config";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { lazy } from "react";
-import ThemeProvider, { Theme } from "@context/ThemeProvider";
+import ThemeProvider, { Theme } from "src/providers/ThemeProvider";
 import secureLocalStorage from "react-secure-storage";
 import { DARK, THEME } from "@constants/theme.const";
-import ToastProvider from "@context/ToastProvider";
+import ToastProvider from "src/providers/ToastProvider";
 
 const App = lazy(() => import("./App"));
 const container = document.getElementById("root");

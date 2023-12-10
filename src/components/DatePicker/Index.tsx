@@ -1,19 +1,20 @@
 import React from "react";
-import DefaultDatePicker, { IDefaultDatePickerProps } from "./Default";
-import JalaliDatePicker, { IJalaliDatePickerProps } from "./Jalali";
+import DefaultDatePicker, { DefaultDatePickerProps } from "./Default";
+import JalaliDatePicker, { JalaliDatePickerProps } from "./Jalali";
 
 const views = {
   default: DefaultDatePicker,
   jalali: JalaliDatePicker,
 };
 
-interface IProps extends IJalaliDatePickerProps, IDefaultDatePickerProps {
-  locale: {
-    types: "default" | "jalali";
+type Props = JalaliDatePickerProps &
+  DefaultDatePickerProps & {
+    locale: {
+      types: "default" | "jalali";
+    };
   };
-}
 
-const LocalizeDatePicker: React.FC<IProps> = (props) => {
+const LocalizeDatePicker: React.FC<Props> = (props) => {
   const CurrentDatePicker = views[props.locale.types];
 
   return <CurrentDatePicker {...props} />;

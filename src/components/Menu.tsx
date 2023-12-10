@@ -17,7 +17,7 @@ import { EN } from "@constants/langs.const";
 import { WindowSize } from "@constants/window-size.const";
 import { useTranslation } from "react-i18next";
 import { Roles } from "@enums/roles.enum";
-import { IMenus } from "@interfaces/menus.interface";
+import { IMenus } from "src/@types/menus.type";
 import useTheme from "@hooks/useTheme";
 
 const Menu: React.FC = () => {

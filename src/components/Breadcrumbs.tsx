@@ -3,11 +3,11 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useLocation } from "react-router-dom";
 
-interface IProps {
+type Props = {
   currentPageTitle: string;
-}
+};
 
-const Breadcrumbs = ({ currentPageTitle }: IProps) => {
+const Breadcrumbs = ({ currentPageTitle }: Props) => {
   const { t } = useTranslation("translations");
   const location = useLocation();
   const [maxItems, setMaxItems] = useState(2);

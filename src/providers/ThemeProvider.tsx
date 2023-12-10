@@ -1,18 +1,25 @@
-import { DARK, LIGHT, THEME } from "@constants/theme.const";
-import React, { ReactNode, createContext, useEffect, useState } from "react";
+import React, {
+  ReactNode,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
+import { THEME } from "@constants/local-storage.const";
+import { DARK, LIGHT } from "@constants/theme.const";
 import secureLocalStorage from "react-secure-storage";
 
 export type Theme = "light" | "dark";
 
-interface ThemeContextProps {
+type ThemeContextProps = {
   theme: Theme;
   toggleTheme: () => void;
-}
+};
 
-interface ThemeProviderProps {
+type ThemeProviderProps = {
   children: ReactNode;
   initialTheme: Theme;
-}
+};
 
 export const ThemeContext = createContext<ThemeContextProps | undefined>(
   undefined,
@@ -23,7 +30,9 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
   initialTheme,
 }) => {
   const storedTheme =
-    (secureLocalStorage.getItem(THEME) as Theme) || (initialTheme as Theme) || DARK;
+    (secureLocalStorage.getItem(THEME) as Theme) ||
+    (initialTheme as Theme) ||
+    DARK;
   const [theme, setTheme] = useState<Theme>(storedTheme);
 
   const toggleTheme = () => {
@@ -45,4 +54,13 @@ const ThemeProvider: React.FC<ThemeProviderProps> = ({
   );
 };
 
-export default ThemeProvider;
+const useTheme = () => {
+  const context = useContext(ThemeContext);
+
+  if (!context) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
+  return context;
+};
+
+export { ThemeProvider, useTheme };

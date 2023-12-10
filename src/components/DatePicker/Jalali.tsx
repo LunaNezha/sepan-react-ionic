@@ -5,7 +5,7 @@ import { InputHTMLAttributes } from "react";
 import { DatePicker } from "zaman";
 import { DatePickerOnChange } from "zaman/dist/packages/DatePicker/DatePicker.types";
 
-export interface IJalaliDatePickerProps {
+export type JalaliDatePickerProps = {
   defaultValue?: Date | any;
   accentColor?: string;
   range?: boolean;
@@ -14,9 +14,9 @@ export interface IJalaliDatePickerProps {
   errors?: any;
   inputAttributes?: InputHTMLAttributes<HTMLInputElement>;
   onChange?: (value: DatePickerOnChange) => void;
-}
+};
 
-const JalaliDatePicker: React.FC<IJalaliDatePickerProps> = ({
+const JalaliDatePicker: React.FC<JalaliDatePickerProps> = ({
   defaultValue = new Date().toLocaleDateString(),
   accentColor = "#2666fa",
   position,

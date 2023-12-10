@@ -13,16 +13,15 @@ import React from "react";
 import Tooltip from "./Tooltip";
 import { Positions } from "@enums/positions.enum";
 
-interface IInputProps
-  extends BorderRadiusProps,
-    TextSizesProps,
-    PaddingProps,
-    TextAlignsProps,
-    React.InputHTMLAttributes<HTMLInputElement> {
-  className?: string;
-  icon?: string;
-  errors?: any;
-}
+type InputProps = BorderRadiusProps &
+  TextSizesProps &
+  PaddingProps &
+  TextAlignsProps &
+  React.InputHTMLAttributes<HTMLInputElement> & {
+    className?: string;
+    icon?: string;
+    errors?: any;
+  };
 
 const Input = (
   {
@@ -34,7 +33,7 @@ const Input = (
     TextSizes,
     TextAligns,
     ...props
-  }: IInputProps,
+  }: InputProps,
   ref: React.LegacyRef<HTMLInputElement>,
 ) => {
   return (

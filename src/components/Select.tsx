@@ -5,8 +5,7 @@ import { cn } from "@utils/classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-export interface ISelectProps
-  extends React.HTMLAttributes<HTMLIonSelectOptionElement> {
+export type SelectProps = React.HTMLAttributes<HTMLIonSelectOptionElement> & {
   className?: string;
   errors?: any;
   icon?: string;
@@ -14,7 +13,7 @@ export interface ISelectProps
   platform: "web" | "mobile";
   alertTitle?: string;
   children: React.ReactNode;
-}
+};
 
 const Select = (
   {
@@ -26,7 +25,7 @@ const Select = (
     platform,
     alertTitle,
     ...props
-  }: ISelectProps,
+  }: SelectProps,
   ref: React.Ref<HTMLIonSelectElement>,
 ) => {
   const { t } = useTranslation("translations");

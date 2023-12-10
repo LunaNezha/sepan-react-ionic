@@ -5,11 +5,11 @@ import { IonAlert } from "@ionic/react";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-interface IProps {
+type Props = {
   changeDirection: (dir: Directions) => void;
-}
+};
 
-const LanguageSwitcherMobileView: React.FC<IProps> = ({ changeDirection }) => {
+const LanguageSwitcherMobileView: React.FC<Props> = ({ changeDirection }) => {
   const { i18n, t } = useTranslation();
   const [isAlertOpen, setAlertOpen] = useState(false);
 

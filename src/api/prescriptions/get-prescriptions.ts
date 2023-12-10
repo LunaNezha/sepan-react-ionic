@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { axios } from "@constants/axios.const";
-import { IPrescriptions } from "@interfaces/prescriptions.interface";
+import { IPrescriptions } from "src/@types/prescriptions.type";
 
 export const GetPrescriptions = () => {
   const { data, error } = useQuery({

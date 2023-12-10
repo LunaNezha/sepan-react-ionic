@@ -1,12 +1,12 @@
-import { axios } from "@constants/axios.const";
-import { IAddPrescription } from "@interfaces/prescriptions.interface";
+import apiClient from "@constants/axios.const";
+import { IAddPrescription } from "src/@types/prescriptions.type";
 import { useMutation } from "@tanstack/react-query";
 
 export const AddPrescription = () => {
   return useMutation({
     mutationKey: ["prescription"],
     mutationFn: async () => {
-      const { data } = await axios.post("prescription", {});
+      const { data } = await apiClient.post("prescription", {});
       return data as IAddPrescription;
     },
   });

@@ -1,14 +1,14 @@
 import React from "react";
 
-interface IProps {
+type Props = {
   payload: { value: string; color: string }[];
-}
+};
 
-const LegendContent: React.FC<IProps> = (props) => {
+const LegendContent: React.FC<Props> = (props) => {
   const { payload } = props;
 
   return (
-    <ul className="flex relative flex-wrap items-center justify-center gap-4">
+    <ul className="relative flex flex-wrap items-center justify-center gap-4">
       {payload.map((entry, index) => (
         <li
           key={`item-${index}`}

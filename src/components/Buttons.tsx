@@ -118,11 +118,10 @@ const buttonVariants = cva(
   },
 );
 
-interface IButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  VariantProps<typeof buttonVariants> & {};
 
-const Button = forwardRef<HTMLButtonElement, IButtonProps>(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, round, size, variant, ...props }, ref) => {
     return (
       <button

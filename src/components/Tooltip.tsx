@@ -3,19 +3,19 @@ import PropTypes from "prop-types";
 import { cn } from "@utils/classnames";
 import React from "react";
 
-interface IProps extends React.HTMLAttributes<HTMLDivElement> {
+type Props = React.HTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
   message: string;
   position: Positions;
-}
+};
 
-const Tooltip = ({ message, position, children, ...props }: IProps) => {
+const Tooltip = ({ message, position, children, ...props }: Props) => {
   return (
     <div className="group relative cursor-pointer" {...props}>
       <div>{children}</div>
       <span
         className={cn(
-          "absolute hidden font-iranyekan-regular whitespace-nowrap rounded-lg bg-white-50 p-2 text-xs text-white-950 drop-shadow-lg transition group-hover:inline-block dark:bg-ebony-950 dark:text-white-200",
+          "absolute hidden whitespace-nowrap rounded-lg bg-white-50 p-2 font-iranyekan-regular text-xs text-white-950 drop-shadow-lg transition group-hover:inline-block dark:bg-ebony-950 dark:text-white-200",
           position === Positions.Top
             ? "bottom-[calc(100%+5px)] left-1/2 -translate-x-1/2"
             : "",
