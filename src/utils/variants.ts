@@ -32,7 +32,7 @@ export const TextSizesVariants = cva([], {
     TextSizes: {
       base: ["text-base"],
       xs: ["text-xs"],
-      sm: ["text-sm"],
+      sm: ["text-xs sm:text-sm"],
       md: ["text-md"],
       lg: ["text-lg"],
       xl: ["text-xl"],
