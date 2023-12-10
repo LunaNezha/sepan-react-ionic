@@ -289,9 +289,8 @@
     }
 
     &::part(wheel-item active) {
-      @apply !text-emerald-400 font-bold;
+      @apply font-bold !text-emerald-400;
     }
-    
   }
 
   ion-item {
@@ -505,6 +504,53 @@ ion-alert {
 
       &[data-selected="true"] {
         @apply bg-blue-600 !text-white-50;
+      }
+    }
+  }
+}
+
+.calendar {
+  .zm-Header {
+    @apply border-b-[1px] border-b-white-950/10 bg-transparent p-2 dark:border-b-white-200/10;
+
+    button {
+      @apply rounded-lg text-white-950 hover:bg-blue-600/10 hover:text-blue-600 focus:bg-transparent dark:text-white-200 hover:dark:bg-blue-600/20;
+
+      .zm-IconPrevButton {
+      }
+
+      &.zm-MonthYearButton {
+        @apply font-medium;
+      }
+    }
+  }
+
+  .css-sp254y {
+    @apply m-0 h-auto justify-between p-4;
+
+    .css-1tniij6 {
+      @apply text-white-950/70 dark:text-white-200/70;
+    }
+  }
+
+  .css-7qlbje,
+  .css-1ngbwef,
+  .css-133ufif {
+    @apply left-0 right-0  p-4;
+
+    button {
+      @apply rounded-md text-white-950 hover:border-white-950/20 focus:bg-transparent dark:text-white-200 hover:dark:border-white-200/20;
+
+      &[data-selected="true"] {
+        @apply text-white-50;
+      }
+    }
+
+    .css-pw7rye {
+      @apply w-full;
+
+      .css-11ydt2g {
+        @apply w-full justify-between;
       }
     }
   }
