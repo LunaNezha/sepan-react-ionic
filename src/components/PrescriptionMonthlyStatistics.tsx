@@ -11,12 +11,14 @@ import {
 } from "recharts";
 import { WindowSize } from "@constants/window-size.const";
 import { lazy } from "react";
+import { useTranslation } from "react-i18next";
 
 const LegendContent = lazy(() => import("./Chart/LegendContent"));
 const TooltipContent = lazy(() => import("./Chart/TooltipContent"));
 
-const PrescriptionStatistics = () => {
+const PrescriptionMonthlyStatistics = () => {
   const { prescription } = GetPrescriptions();
+  const { t } = useTranslation("translations");
   const [width] = WindowSize();
 
   return (
@@ -31,7 +33,9 @@ const PrescriptionStatistics = () => {
             <i className="fi fi-rr-arrow-small-up"></i>
           </div>
         </div>
-        <small className="text-xs opacity-60">آمار نسخه های ماهانه</small>
+        <small className="text-xs opacity-60">
+          {t("titles.prescription_monthly_statistic")}
+        </small>
       </div>
 
       {/* chart details */}
@@ -86,4 +90,4 @@ const PrescriptionStatistics = () => {
   );
 };
 
-export default PrescriptionStatistics;
+export default PrescriptionMonthlyStatistics;

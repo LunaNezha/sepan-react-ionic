@@ -1,4 +1,4 @@
-import i18n from "./i18n.config";
+import i18n from "./i18n";
 import { createRoot } from "react-dom/client";
 import { lazy } from "react";
 import secureLocalStorage from "react-secure-storage";

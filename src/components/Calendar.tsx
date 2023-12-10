@@ -9,18 +9,15 @@ const LocalizeCalendar = () => {
   const [calendarValue, setCalendarValue] = useState(new Date());
 
   return (
-    <>
-      {i18n.language === FA ? (
-        <CalendarProvider locale="fa">
-          <Calendar
-            defaultValue={calendarValue}
-            onChange={(day) => setCalendarValue(new Date(day))}
-          />
-        </CalendarProvider>
-      ) : (
-        <IonDatetime presentation="date" />
-      )}
-    </>
+    <CalendarProvider
+      locale={i18n.language == FA ? "fa" : "en"}
+      direction={i18n.language == FA ? "rtl" : "ltr"}
+    >
+      <Calendar
+        defaultValue={calendarValue}
+        onChange={(day) => setCalendarValue(new Date(day))}
+      />
+    </CalendarProvider>
   );
 };
 

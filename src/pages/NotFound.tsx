@@ -1,13 +1,14 @@
 import NotFoundImage from "@assets/images/404-error.svg";
 import { Button } from "@components/Buttons";
+import { PathNames } from "@constants/pathnames.const";
 import { IonText } from "@ionic/react";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 const NotFound = () => {
-  const { t } = useTranslation("translations");
   const history = useHistory();
+  const { t } = useTranslation("translations");
 
   useEffect(() => {
     document.title = t("titles.not_found");
@@ -25,7 +26,7 @@ const NotFound = () => {
         <Button
           variant={"filled-blue"}
           round={"full"}
-          onClick={() => history.push("/")}
+          onClick={() => history.push(PathNames.Home)}
         >
           <i className="fi fi-rr-house-chimney"></i>
           <IonText>{t("buttons.back_home")}</IonText>

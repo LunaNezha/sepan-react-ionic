@@ -10,7 +10,13 @@ interface Resources {
       "not_found": "صفحه یافت نشد",
       "terms_and_conditions": "شرایط و قوانین",
       "privacy": "قوانین و حریم خصوصی",
-      "login": "ورود"
+      "login": "ورود",
+      "monthly_orders": "سفارشات ماهانه",
+      "latest_notifications": "اطلاعیه های اخیر",
+      "calendar": "تقویم",
+      "daily_income": "درامد روزانه",
+      "this_month_users": "کاربران جدید این ماه",
+      "prescription_monthly_statistic": "آمار نسخه های ماهانه"
     },
     "alert_titles": {
       "disease_type": "انتخاب نوع بیماری",
@@ -73,7 +79,8 @@ interface Resources {
       "send_again": "ارسال مجدد",
       "submit": "تایید",
       "change_phone_number": "تغییر شماره تلفن",
-      "close": "بستن"
+      "close": "بستن",
+      "show_all": "مشاهده همه"
     },
     "checkboxes": {
       "register_copyright": "با ورود و یا ثبت نام در سایت سامانه پذیرش الکترونیک نسخه (سپان) ، شما <TermsConditionLink>شرایط و قوانین</TermsConditionLink> استفاده از سرویس های سایت سپان و <PrivacyLink>قوانین و حریم خصوصی</PrivacyLink> آن را می‌پذیرید."
@@ -82,7 +89,8 @@ interface Resources {
       "delivered_prescription": "نسخه تحویل شده",
       "rejected_prescription": "نسخه رد شده",
       "canceled_prescription": "نسخه لغو شده",
-      "login_welcome": "به سامانه پذیرش الکترونیکی نسخه خوش آمدید"
+      "login_welcome": "به سامانه پذیرش الکترونیکی نسخه خوش آمدید",
+      "using_calendar": "با استفاده از این تقویم می توانید زمان دریافت نسخه یا تحویل دارو را مشاهده کنید."
     },
     "choose_lang": {
       "header": "انتخاب زبان"
@@ -119,7 +127,10 @@ interface Resources {
       "transplant": "پیوند",
       "thalassemia": "تالاسمی",
       "chemotherapy": "شیمی درمانی",
-      "none": "هیچکدام"
+      "none": "هیچکدام",
+      "progress": "پیشرفت",
+      "million": "میلیون",
+      "increase": "افزایش"
     }
   }
 }

@@ -9,7 +9,13 @@
     "not_found": "Not Found",
     "terms_and_conditions": "Terms and Conditions",
     "privacy": "Rules and Privacy",
-    "login": "Login"
+    "login": "Login",
+    "monthly_orders": "Monthly orders",
+    "latest_notifications": "Latest notifications",
+    "calendar": "Calendar",
+    "daily_income": "Daily income",
+    "this_month_users": "This month users",
+    "prescription_monthly_statistic": "Prescription monthly statistic"
   },
   "alert_titles": {
     "disease_type": "Choose Disease Type",
@@ -72,7 +78,8 @@
     "send_again": "Send Again",
     "submit": "Submit",
     "change_phone_number": "Change Phone Number",
-    "close": "Close"
+    "close": "Close",
+    "show_all": "Show all"
   },
   "checkboxes": {
     "register_copyright": "By logging in or registering on the website of the Electronic Admission System (SEPAN), you <TermsConditionLink>Terms and Conditions</TermsConditionLink> of using the services, You accept the SEPAN site and its <PrivacyLink>Privacy Policy</PrivacyLink>."
@@ -81,7 +88,8 @@
     "delivered_prescription": "Delivered prescription",
     "rejected_prescription": "Rejected prescription",
     "canceled_prescription": "Canceled prescription",
-    "login_welcome": "Welcome to the electronic prescription acceptance system"
+    "login_welcome": "Welcome to the electronic prescription acceptance system",
+    "using_calendar": "Using this calendar, you can see the time of receiving the prescription or delivery of the medicine."
   },
   "choose_lang": {
     "header": "Choose language"
@@ -118,6 +126,9 @@
     "transplant": "Transplant",
     "thalassemia": "Thalassemia",
     "chemotherapy": "Chemotherapy",
-    "none": "None"
+    "none": "None",
+    "progress": "Progress",
+    "million": "Million",
+    "increase": "Increase"
   }
 }

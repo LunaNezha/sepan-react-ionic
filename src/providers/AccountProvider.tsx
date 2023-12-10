@@ -1,9 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { UserDetails } from "@type/user.type";
 import { useAuth } from "./AuthProvider";
 import { useQuery } from "@tanstack/react-query";
 import { AccountDetailsAPI } from "@api/user";
 import { enqueueSnackbar } from "notistack";
+import { UserDetails } from "src/@types/user.type";
 
 type AccountContextProps = {
   accountData: UserDetails | undefined;

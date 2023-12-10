@@ -4,15 +4,14 @@ import { IonLabel, IonPopover } from "@ionic/react";
 import React, { useRef, useState } from "react";
 import IranFlag from "@assets/images/iran.png";
 import UnitedStatesFlag from "@assets/images/united-states.png";
-import { useTranslation } from "react-i18next";
 import { Button } from "@components/Buttons";
+import i18next from "i18next";
 
 type Props = {
   changeDirection: (dir: Directions) => void;
 };
 
 const LanguageSwitcherWebView: React.FC<Props> = ({ changeDirection }) => {
-  const { i18n } = useTranslation();
   const popover = useRef<HTMLIonPopoverElement>(null);
   const [popoverOpen, setPopoverOpen] = useState(false);
 
@@ -22,7 +21,7 @@ const LanguageSwitcherWebView: React.FC<Props> = ({ changeDirection }) => {
       image: IranFlag,
       handler: () => {
         changeDirection(Directions.RTL);
-        i18n.changeLanguage(FA);
+        i18next.changeLanguage(FA);
         setPopoverOpen(false);
       },
     },
@@ -31,7 +30,7 @@ const LanguageSwitcherWebView: React.FC<Props> = ({ changeDirection }) => {
       image: UnitedStatesFlag,
       handler: () => {
         changeDirection(Directions.LTR);
-        i18n.changeLanguage(EN);
+        i18next.changeLanguage(EN);
         setPopoverOpen(false);
       },
     },

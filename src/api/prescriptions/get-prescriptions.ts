@@ -1,6 +1,6 @@
 import apiClient from "@constants/axios.const";
 import { useQuery } from "@tanstack/react-query";
-import { Prescriptions } from "@type/prescriptions.type";
+import { Prescriptions } from "src/@types/prescriptions.type";
 
 export const GetPrescriptions = () => {
   const { data, error } = useQuery({

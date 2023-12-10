@@ -1,8 +1,10 @@
 import { WindowSize } from "@constants/window-size.const";
+import { useTranslation } from "react-i18next";
 import { Bar, BarChart, ResponsiveContainer, Tooltip } from "recharts";
 
-const DailySales = () => {
+const DailyIncome = () => {
   const [width] = WindowSize();
+  const { t } = useTranslation("translations");
   const chartDatas = [
     {
       name: "Page A",
@@ -53,14 +55,16 @@ const DailySales = () => {
       {/* top detais */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
-          <h3 className="font-iranyekan-extrabold text-lg">5,5 میلیون</h3>
+          <h3 className="font-iranyekan-extrabold text-lg">
+            5,5 {t("globals.million")}
+          </h3>
 
           <div className="badge badge-danger">
             <span>5,7%</span>
             <i className="fi fi-rr-arrow-small-down"></i>
           </div>
         </div>
-        <small className="text-xs opacity-60">درآمد روزانه</small>
+        <small className="text-xs opacity-60">{t("titles.daily_income")}</small>
       </div>
 
       {/* chart details */}
@@ -82,4 +86,4 @@ const DailySales = () => {
   );
 };
 
-export default DailySales;
+export default DailyIncome;

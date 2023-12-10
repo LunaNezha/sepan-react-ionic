@@ -1,12 +1,12 @@
 import Cookies from "js-cookie";
 import secureLocalStorage from "react-secure-storage";
 import { AUTH_TOKEN, TOKEN } from "@constants/local-storage.const";
-import { APIResponse } from "@type/api-responses.type";
+import { APIResponse } from "src/@types/api-responses.type";
 import {
   AddCustomerRequest,
   PersonDetailsRequest,
   UserDetails,
-} from "@type/user.type";
+} from "src/@types/user.type";
 import apiClient from "@constants/axios.const";
 
 export const AccountDetailsAPI = async () => {

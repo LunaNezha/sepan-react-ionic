@@ -2,6 +2,7 @@ import { Button } from "@components/Buttons";
 import { EN, ENGLISH, FA, PERSIAN } from "@constants/langs.const";
 import { Directions } from "@enums/directions.enum";
 import { IonAlert } from "@ionic/react";
+import i18next from "i18next";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -10,7 +11,7 @@ type Props = {
 };
 
 const LanguageSwitcherMobileView: React.FC<Props> = ({ changeDirection }) => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation("translations");
   const [isAlertOpen, setAlertOpen] = useState(false);
 
   return (
@@ -35,7 +36,7 @@ const LanguageSwitcherMobileView: React.FC<Props> = ({ changeDirection }) => {
             checked: true,
             handler: () => {
               changeDirection(Directions.RTL);
-              i18n.changeLanguage(FA);
+              i18next.changeLanguage(FA);
               setAlertOpen(false);
             },
           },
@@ -45,7 +46,7 @@ const LanguageSwitcherMobileView: React.FC<Props> = ({ changeDirection }) => {
             value: EN,
             handler: () => {
               changeDirection(Directions.LTR);
-              i18n.changeLanguage(EN);
+              i18next.changeLanguage(EN);
               setAlertOpen(false);
             },
           },

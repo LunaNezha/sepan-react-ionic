@@ -6,24 +6,25 @@ import {
   IonMenuToggle,
 } from "@ionic/react";
 import { NavLink } from "react-router-dom";
-import { DARK } from "@constants/theme.const";
-import LightLogo from "@assets/images/logo.png";
-import DarkLogo from "@assets/images/logo-dark.png";
-import { Directions } from "@enums/directions.enum";
 import classNames from "classnames";
-import { useEffect } from "react";
 import i18next from "i18next";
-import { EN } from "@constants/langs.const";
+import { DARK } from "@constants/theme.const";
+import { Directions } from "@enums/directions.enum";
+import { useEffect } from "react";
+import { EN, FA } from "@constants/langs.const";
 import { WindowSize } from "@constants/window-size.const";
 import { useTranslation } from "react-i18next";
 import { Roles } from "@enums/roles.enum";
 import { useTheme } from "@providers/ThemeProvider";
-import { Menus } from "@type/menus.type";
+
+import LightLogo from "@assets/images/logo.png";
+import DarkLogo from "@assets/images/logo-dark.png";
+import { Menus } from "src/@types/menus.type";
 
 const Menu: React.FC = () => {
   let currentDirection = document.body.dir;
   const menuElement = document.getElementById("menu");
-  const { t } = useTranslation("translations");
+  const { t, i18n } = useTranslation("translations");
   const [width] = WindowSize();
   const { theme } = useTheme();
 
@@ -142,8 +143,8 @@ const Menu: React.FC = () => {
               alt="logo"
               src={theme === DARK ? LightLogo : DarkLogo}
             />
-            <IonLabel class="font-iranyekan-extrabold text-base xl:text-lg">
-              ســــامانه پــــذیــــرش الکترونیکی نســــخه
+            <IonLabel class="font-iranyekan-extrabold rtl:text-right ltr:text-left text-base xl:text-lg">
+              {t("app_complete_title")}
             </IonLabel>
           </div>
 
@@ -162,8 +163,8 @@ const Menu: React.FC = () => {
                     >
                       <i
                         className={classNames(appPage.icon, {
-                          " ml-4": document.body.dir == Directions.RTL,
-                          " mr-4": document.body.dir == Directions.LTR,
+                          " ml-4": i18n.language == FA,
+                          " mr-4": i18n.language == EN,
                         })}
                       ></i>
                       <IonLabel class="font-iranyekan-medium">
