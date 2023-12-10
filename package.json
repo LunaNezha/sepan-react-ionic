@@ -10,7 +10,7 @@
     "test.e2e": "cypress run",
     "test.unit": "vitest",
     "lint": "eslint",
-    "interface": "i18next-resources-for-ts interface -i ./src/i18n/fa -o ./src/@types/resources.d.ts"
+    "interface": "i18next-resources-for-ts interface -i ./public/locales/fa -o ./src/types/resources.d.ts"
   },
   "dependencies": {
     "@capacitor/android": "5.4.2",

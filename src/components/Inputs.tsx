@@ -21,6 +21,7 @@ type InputProps = BorderRadiusProps &
     className?: string;
     icon?: string;
     errors?: any;
+    children?: React.ReactNode;
   };
 
 const Input = (
@@ -32,6 +33,7 @@ const Input = (
     Padding,
     TextSizes,
     TextAligns,
+    children,
     ...props
   }: InputProps,
   ref: React.LegacyRef<HTMLInputElement>,
@@ -55,6 +57,8 @@ const Input = (
         )}
         {...props}
       />
+
+      {children}
 
       {/* error message */}
       {errors && (

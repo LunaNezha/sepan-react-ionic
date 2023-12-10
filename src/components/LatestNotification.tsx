@@ -2,10 +2,10 @@ import { IonButton, IonText } from "@ionic/react";
 
 const LatestNotification = () => {
   return (
-    <div className="shadows text-white-950 bg-white-50 dark:text-white-200 relative flex flex-1 flex-col justify-between gap-10 rounded-md px-6 py-7 font-iranyekan-regular dark:bg-big-stone-950">
+    <div className="shadows relative flex flex-1 flex-col justify-between gap-10 rounded-md bg-white-50 px-6 py-7 font-iranyekan-regular text-white-950 dark:bg-big-stone-950 dark:text-white-200">
       {/* top detais */}
       <div className="flex flex-col items-center justify-center gap-2">
-        <div className="bg-triangle-shape absolute inset-x-0 bottom-auto top-0 h-20 bg-cover bg-no-repeat"></div>
+        <div className="absolute inset-x-0 bottom-auto top-0 h-20 bg-triangle-shape bg-cover bg-no-repeat"></div>
         <i className="fi fi-rr-envelope-dot flex h-14 w-14 items-center justify-center rounded-full bg-orange-400/10 text-xl text-orange-400"></i>
 
         <div className="flex flex-col justify-center text-center">
@@ -19,7 +19,7 @@ const LatestNotification = () => {
         <IonButton
           size="small"
           expand="full"
-          className="btn partNative:px-3 partNative:py-2 partNative:bg-white-100 partNative:dark:bg-ebony-950 text-white-950 dark:text-white-200 partNative:rounded-md font-iranyekan-bold hover:text-blue-600 hover:dark:text-blue-600"
+          className="btn font-iranyekan-bold text-white-950 hover:text-blue-600 partNative:rounded-md partNative:bg-white-100 partNative:px-3 partNative:py-2 dark:text-white-200 hover:dark:text-blue-600 partNative:dark:bg-ebony-950"
         >
           <IonText>مشاهده همه</IonText>
           <i className="fi fi-rr-arrow-small-left mr-3 text-lg duration-300 ease-in"></i>

@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import {
   IonContent,
   IonItem,
@@ -6,6 +5,7 @@ import {
   IonMenu,
   IonMenuToggle,
 } from "@ionic/react";
+import { NavLink } from "react-router-dom";
 import { DARK } from "@constants/theme.const";
 import LightLogo from "@assets/images/logo.png";
 import DarkLogo from "@assets/images/logo-dark.png";
@@ -17,8 +17,8 @@ import { EN } from "@constants/langs.const";
 import { WindowSize } from "@constants/window-size.const";
 import { useTranslation } from "react-i18next";
 import { Roles } from "@enums/roles.enum";
-import { Menus } from "src/@types/menus.type";
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@providers/ThemeProvider";
+import { Menus } from "@type/menus.type";
 
 const Menu: React.FC = () => {
   let currentDirection = document.body.dir;

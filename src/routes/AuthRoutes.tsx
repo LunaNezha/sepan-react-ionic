@@ -1,7 +1,7 @@
 import { PathNames } from "@constants/pathnames.const";
 import AuthLayout from "@layouts/AuthLayout";
 import React, { lazy } from "react";
-import { Redirect, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 import LightLoginImage from "@assets/images/sign-in-light.svg";
@@ -24,12 +24,6 @@ const AuthRoutes: React.FC = () => {
 
   return (
     <>
-      {/* redirect /auth/login to /auth/login/username */}
-      {/* <Redirect
-        from={PathNames.Auth.Login}
-        to={PathNames.Auth.LoginFirstStep}
-      /> */}
-
       {/* route to /auth/login/username */}
       <Route
         exact

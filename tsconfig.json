@@ -22,17 +22,20 @@
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
+      "@public/*": [
+        "./public/*"
+      ],
+      "@type/*": [
+        "./src/types/*"
+      ],
+      "@api/*": [
+        "./src/api/*"
+      ],
       "@assets/*": [
         "./src/assets/*"
       ],
       "@components/*": [
         "./src/components/*"
-      ],
-      "@interfaces/*": [
-        "./src/interfaces/*"
-      ],
-      "@pages/*": [
-        "./src/pages/*"
       ],
       "@constants/*": [
         "./src/constants/*"
@@ -40,29 +43,20 @@
       "@enums/*": [
         "./src/enums/*"
       ],
-      "@i18n/*": [
-        "./src/i18n/*"
-      ],
-      "@api/*": [
-        "./src/api/*"
-      ],
-      "@hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@context/*": [
-        "src/providers/*"
-      ],
-      "@utils/*": [
-        "./src/utils/*"
-      ],
       "@layouts/*": [
         "./src/layouts/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@providers/*": [
+        "./src/providers/*"
       ],
       "@routes/*": [
         "./src/routes/*"
       ],
-      "@public/*": [
-        "./public/*"
+      "@utils/*": [
+        "./src/utils/*"
       ],
     }
   },

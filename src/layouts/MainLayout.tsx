@@ -1,5 +1,4 @@
 import {
-  IonApp,
   IonContent,
   IonPage,
   IonRouterOutlet,
@@ -12,16 +11,23 @@ import {
   homeOutline,
   personCircleOutline,
 } from "ionicons/icons";
-import React, { lazy } from "react";
+import React, { lazy, useEffect } from "react";
 import { isWebView } from "@constants/platforms.const";
 import { IonIcon, IonLabel, IonTabBar, IonTabButton } from "@ionic/react";
 import { useTranslation } from "react-i18next";
+import { useAuth } from "@providers/AuthProvider";
+import { useHistory } from "react-router";
+import secureLocalStorage from "react-secure-storage";
+import { TOKEN } from "@constants/local-storage.const";
+import { PathNames } from "@constants/pathnames.const";
 
 const Menu = lazy(() => import("@components/Menu"));
 const Header = lazy(() => import("@components/Header"));
 
 const MainLayout: React.FC<any> = ({ children }) => {
   const { t } = useTranslation(["translations"]);
+  const { token } = useAuth();
+  const history = useHistory();
 
   const tabItems = [
     {
@@ -49,6 +55,13 @@ const MainLayout: React.FC<any> = ({ children }) => {
       href: "/",
     },
   ];
+
+  useEffect(() => {
+    if (!token) {
+      secureLocalStorage.removeItem(TOKEN);
+      history.push(PathNames.Auth.Login);
+    }
+  }, [token, history]);
 
   return (
     <IonSplitPane contentId="main">

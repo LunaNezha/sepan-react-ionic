@@ -5,13 +5,21 @@ import LightUser from "@assets/images/user-light.png";
 import DarkUser from "@assets/images/user-dark.png";
 import { Button } from "./Buttons";
 import { LIGHT } from "@constants/theme.const";
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@providers/ThemeProvider";
+import { useAccount } from "@providers/AccountProvider";
+import { useAuth } from "@providers/AuthProvider";
 
 const ThemeSwitcher = lazy(() => import("@components/ThemeSwitcher"));
 const LanguageSwitcher = lazy(() => import("./LanguageSwitcher/Index"));
 
 const Header: React.FC = () => {
   const { theme } = useTheme();
+  const { setToken } = useAuth();
+  const { accountData } = useAccount();
+
+  const handleLogout = () => {
+    setToken(undefined);
+  };
 
   return (
     <IonHeader class="border-0">
@@ -31,8 +39,10 @@ const Header: React.FC = () => {
               src={theme === LIGHT ? LightUser : DarkUser}
             />
             <div className="flex flex-col gap-1 text-white-950 dark:text-white-200">
-              <label className="font-iranyekan-bold text-sm">پیمان حسینی</label>
-              <small className="text-xs opacity-70">برنامه نویس ارشد</small>
+              <label className="font-iranyekan-bold text-sm">
+                {accountData?.username}
+              </label>
+              <small className="text-xs opacity-70">{accountData?.roles}</small>
             </div>
           </div>
         </div>
@@ -61,6 +71,7 @@ const Header: React.FC = () => {
             className="h-9 w-9 p-0"
             variant={"filled-default"}
             round={"full"}
+            onClick={handleLogout}
           >
             <i className="fi fi-rr-power text-lg"></i>
           </Button>

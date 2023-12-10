@@ -1,16 +1,19 @@
-import CirclePattern from "@assets/images/circle-pattern";
 import { DARK, LIGHT } from "@constants/theme.const";
 import LightLogo from "@assets/images/logo.png";
 import DarkLogo from "@assets/images/logo-dark.png";
-import React from "react";
+import React, { lazy } from "react";
 import { IonContent, IonHeader, IonText } from "@ionic/react";
 import { useTranslation } from "react-i18next";
-import ThemeSwitcher from "@components/ThemeSwitcher";
-import LanguageSwitcher from "@components/LanguageSwitcher/Index";
 import { isWebView } from "@constants/platforms.const";
 import { Button } from "@components/Buttons";
 import { cn } from "@utils/classnames";
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@providers/ThemeProvider";
+
+const CirclePattern = lazy(() => import("@assets/images/circle-pattern"));
+const ThemeSwitcher = lazy(() => import("@components/ThemeSwitcher"));
+const LanguageSwitcher = lazy(
+  () => import("@components/LanguageSwitcher/Index"),
+);
 
 type AuthDesignProps = {
   children: React.ReactNode;
@@ -89,13 +92,7 @@ const AuthLayout = (props: AuthDesignProps) => {
                 <img
                   className="h-full w-full object-contain"
                   alt="logo"
-                  src={
-                    theme === DARK
-                      ? LightLogo
-                      : theme === LIGHT
-                      ? DarkLogo
-                      : LightLogo
-                  }
+                  src={theme === DARK ? LightLogo : DarkLogo}
                 />
               </div>
 

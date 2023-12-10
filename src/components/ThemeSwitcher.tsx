@@ -2,7 +2,7 @@ import { IonButton } from "@ionic/react";
 import React from "react";
 import classNames from "classnames";
 import { DARK, LIGHT } from "@constants/theme.const";
-import { useTheme } from "@context/ThemeProvider";
+import { useTheme } from "@providers/ThemeProvider";
 
 const themeButtons = [
   {
