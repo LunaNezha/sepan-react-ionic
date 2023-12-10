@@ -4,8 +4,8 @@ import { isWebView } from "@constants/platforms.const";
 import LightUser from "@assets/images/user-light.png";
 import DarkUser from "@assets/images/user-dark.png";
 import { Button } from "./Buttons";
-import useTheme from "@hooks/useTheme";
-import { DARK, LIGHT } from "@constants/theme.const";
+import { LIGHT } from "@constants/theme.const";
+import { useTheme } from "@context/ThemeProvider";
 
 const ThemeSwitcher = lazy(() => import("@components/ThemeSwitcher"));
 const LanguageSwitcher = lazy(() => import("./LanguageSwitcher/Index"));

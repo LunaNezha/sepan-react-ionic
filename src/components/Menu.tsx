@@ -6,7 +6,7 @@ import {
   IonMenu,
   IonMenuToggle,
 } from "@ionic/react";
-import { DARK, LIGHT } from "@constants/theme.const";
+import { DARK } from "@constants/theme.const";
 import LightLogo from "@assets/images/logo.png";
 import DarkLogo from "@assets/images/logo-dark.png";
 import { Directions } from "@enums/directions.enum";
@@ -17,8 +17,8 @@ import { EN } from "@constants/langs.const";
 import { WindowSize } from "@constants/window-size.const";
 import { useTranslation } from "react-i18next";
 import { Roles } from "@enums/roles.enum";
-import { IMenus } from "src/@types/menus.type";
-import useTheme from "@hooks/useTheme";
+import { Menus } from "src/@types/menus.type";
+import { useTheme } from "@context/ThemeProvider";
 
 const Menu: React.FC = () => {
   let currentDirection = document.body.dir;
@@ -27,7 +27,7 @@ const Menu: React.FC = () => {
   const [width] = WindowSize();
   const { theme } = useTheme();
 
-  const appPages: IMenus[] = [
+  const appPages: Menus[] = [
     {
       title: t("menus.dashboard"),
       url: "/",
@@ -38,68 +38,68 @@ const Menu: React.FC = () => {
       title: t("menus.prescription_tracking"),
       url: "/prescription-tracking",
       icon: "fi fi-rr-search-alt",
-      role: Roles.PATIENT,
+      role: [Roles.PATIENT],
     },
     {
       title: t("menus.notifications"),
       url: "/notifications",
       icon: "fi fi-rr-bell",
-      role: Roles.PATIENT,
+      role: [Roles.PATIENT],
     },
     {
       title: t("menus.rare_drugs"),
       url: "/rare-drugs",
       icon: "fi fi-rr-medicine",
-      role: Roles.PATIENT,
+      role: [Roles.PATIENT],
     },
     {
       title: t("menus.patients"),
       url: "/patients",
       icon: "fi fi-rr-users",
-      role: Roles.ADMIN,
+      role: [Roles.ADMIN],
     },
     {
       title: t("menus.prescription_acceptance_list"),
       url: "/requests/lists",
       icon: "fi fi-rr-document-signed",
-      role: Roles.ADMIN,
+      role: [Roles.ADMIN],
     },
     {
       title: t("menus.temporary_prescriptions"),
       url: "/requests/unassignments",
       icon: "fi fi-rr-folder-times",
-      role: Roles.ADMIN,
+      role: [Roles.ADMIN],
     },
     {
       title: t("menus.prescription_delivery"),
       url: "/requests/delivering",
       // type: UserTypesNumbers.WrappingPrescription,
       icon: "fi fi-rr-folder-download",
-      role: Roles.ADMIN,
+      role: [Roles.ADMIN],
     },
     {
       title: t("menus.prescription_archive"),
       url: "/requests/archive",
       icon: "fi fi-rr-archive",
-      role: Roles.ADMIN,
+      role: [Roles.ADMIN],
     },
     {
       title: t("menus.sms"),
       icon: "fi fi-rr-comment-alt",
       url: "/sms/list",
-      role: Roles.ADMIN,
+      role: [Roles.ADMIN],
     },
     {
       title: t("menus.news"),
       url: "/news",
       icon: "fi fi-rr-calendar",
-      role: Roles.ADMIN,
+      role: [Roles.ADMIN],
     },
     {
       title: t("menus.guide"),
       url: "/guide",
       icon: "fi fi-rr-interrogation",
-      role: Roles.ADMIN,
+      role: [Roles.ADMIN],
     },
     {
       title: t("menus.settings"),
@@ -138,7 +138,7 @@ const Menu: React.FC = () => {
           {/* logo & title */}
           <div className="flex flex-col items-center justify-center gap-4 text-center sm:gap-5 lg:flex-row lg:text-right">
             <img
-              className="flex h-20 w-20 p-3 items-center rounded-2xl bg-white-100 dark:bg-ebony-950"
+              className="flex h-20 w-20 items-center rounded-2xl bg-white-100 p-3 dark:bg-ebony-950"
               alt="logo"
               src={theme === DARK ? LightLogo : DarkLogo}
             />
