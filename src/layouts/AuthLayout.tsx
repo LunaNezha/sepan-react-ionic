@@ -84,7 +84,7 @@ const AuthLayout = (props: AuthDesignProps) => {
           <div
             className={cn(
               className,
-              "m-auto flex flex-col justify-center gap-8",
+              "m-auto flex h-full flex-col justify-center gap-8",
             )}
           >
             <header className="flex flex-col items-center justify-center gap-4 text-center">

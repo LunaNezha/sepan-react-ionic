@@ -3,7 +3,7 @@ import secureLocalStorage from "react-secure-storage";
 import { TOKEN } from "./local-storage.const";
 
 const apiClient = axios.create({
-  baseURL: "https://api.crm.roshapharmacy.com/api/",
+  baseURL: "your api code",
   withCredentials: true,
   headers: {
     "Access-Control-Allow-Origin": "*",

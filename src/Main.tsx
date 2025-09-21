@@ -19,15 +19,16 @@ const initialTheme = (secureLocalStorage.getItem(THEME) as Theme) || DARK;
 root.render(
   <I18nextProvider i18n={i18n}>
     <TanstackProvider>
-      <AuthProvider>
-        <AccountProvider>
-          <ThemeProvider initialTheme={initialTheme}>
-            <ToastProvider>
-              <App />
-            </ToastProvider>
-          </ThemeProvider>
-        </AccountProvider>
-      </AuthProvider>
+      {/* TODO: You should uncomment these providers for your apis */}
+      {/* <AuthProvider> */}
+      {/* <AccountProvider> */}
+      <ThemeProvider initialTheme={initialTheme}>
+        <ToastProvider>
+          <App />
+        </ToastProvider>
+      </ThemeProvider>
+      {/* </AccountProvider> */}
+      {/* </AuthProvider> */}
     </TanstackProvider>
   </I18nextProvider>,
 );

@@ -14,12 +14,12 @@ const LanguageSwitcher = lazy(() => import("./LanguageSwitcher/Index"));
 
 const Header: React.FC = () => {
   const { theme } = useTheme();
-  const { setToken } = useAuth();
-  const { accountData } = useAccount();
+  // const { setToken } = useAuth();
+  // const { accountData } = useAccount();
 
-  const handleLogout = () => {
-    setToken(undefined);
-  };
+  // const handleLogout = () => {
+  //   setToken(undefined);
+  // };
 
   return (
     <IonHeader class="border-0">
@@ -40,9 +40,13 @@ const Header: React.FC = () => {
             />
             <div className="flex flex-col gap-1 text-white-950 dark:text-white-200">
               <label className="font-iranyekan-bold text-sm">
-                {accountData?.username}
+                {/* {accountData?.username} */}
+                مهدیه نژادحسینی
               </label>
-              <small className="text-xs opacity-70">{accountData?.roles}</small>
+              <small className="text-xs opacity-70">
+                {/* {accountData?.roles} */}
+                مدیریت
+              </small>
             </div>
           </div>
         </div>
@@ -71,7 +75,7 @@ const Header: React.FC = () => {
             className="h-9 w-9 p-0"
             variant={"filled-default"}
             round={"full"}
-            onClick={handleLogout}
+            // onClick={handleLogout}
           >
             <i className="fi fi-rr-power text-lg"></i>
           </Button>
