@@ -7,11 +7,11 @@
 
 Sepan is a hybrid pharmacy platform built with React and Ionic, designed to improve accessibility and efficiency for patients with critical illnesses. The platform has demonstrated measurable impact in patient enrollment, medication delivery, and overall user satisfaction while maintaining strong performance and maintainability standards.
 
-![App Screenshot](assets/images/screenshots/screenshot-1.png)
-![App Screenshot](assets/images/screenshots/screenshot-2.png)
-![App Screenshot](assets/images/screenshots/screenshot-3.png)
-![App Screenshot](assets/images/screenshots/screenshot-4.png)
-![App Screenshot](assets/images/screenshots/screenshot-5.png)
+![App Screenshot](src/assets/images/screenshots/screenshot-1.png)
+![App Screenshot](src/assets/images/screenshots/screenshot-2.png)
+![App Screenshot](src/assets/images/screenshots/screenshot-3.png)
+![App Screenshot](src/assets/images/screenshots/screenshot-4.png)
+![App Screenshot](src/assets/images/screenshots/screenshot-5.png)
 
 ## **💻 Tech Stack**
 
